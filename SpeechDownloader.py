@@ -32,7 +32,7 @@ GSCmdV2Categs = {'unknown' : 0, 'silence' : 0, '_unknown_' : 0, '_silence_' : 0,
                  'seven' : 19,  'eight' : 20, 'nine' : 1 }
 numGSCmdV2Categs = 21
 
-def PrepareGoogleSpeechCmd(version = 2, forceDownload = False, task = '20cmd'):
+def PrepareGoogleSpeechCmd(version = 2, forceDownload = False, task = '12cmd'):
     """
     Prepares Google Speech commands dataset version 2 for use
     
@@ -78,10 +78,10 @@ def PrepareGoogleSpeechCmd(version = 2, forceDownload = False, task = '20cmd'):
         numGSCmdV2Categs = 21
         
      
-    print('Converting test set WAVs to numpy files')
-    audioUtils.WAV2Numpy(basePath + '/test/')
-    print('Converting training set WAVs to numpy files')
-    audioUtils.WAV2Numpy(basePath + '/train/')
+    #print('Converting test set WAVs to numpy files')
+    #audioUtils.WAV2Numpy(basePath + '/test/')
+    #print('Converting training set WAVs to numpy files')
+    #audioUtils.WAV2Numpy(basePath + '/train/')
     
     #read split from files and all files in folders
     testWAVs = pd.read_csv(basePath+'/train/testing_list.txt', sep=" ", header=None)[0].tolist()
